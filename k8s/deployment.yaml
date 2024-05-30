@@ -1,0 +1,167 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+      annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/patch: /metrics
+          prometheus.io/port: "3306"
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8.0.27 
+        resources:
+        limits:
+          cpu: "500m"
+          memory: "1Gi"
+        ports:
+        - containerPort: 3306 
+        env:
+        - name: MYSQL_ROOT_PASSWORD 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db_root_password                
+        - name: MYSQL_DATABASE
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db                   
+        - name: MYSQL_USER 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db_user                        
+        - name: MYSQL_PASSWORD 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db_password                    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  selector:
+    app: mysql
+  ports:
+    - port: 3306
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-java
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: backend-java
+  template:
+    metadata:
+      labels:
+        app: backend-java
+      annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/patch: /metrics
+          prometheus.io/port: "8080"
+    spec:
+      containers:
+      - name: backend-java 
+        image: rcventura/currency-converter-backend:{{TAG}} 
+        resources:
+        limits:
+          cpu: "500m"
+          memory: "1Gi"
+        ports:
+        - containerPort: 8080 
+        env:
+        - name: MYSQL_HOST 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: host                
+        - name: MYSQL_PORT 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: port                
+        - name: MYSQL_DATABASE
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db                 
+        - name: MYSQL_USER 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db_user                
+        - name: MYSQL_PASSWORD 
+          valueFrom:
+                secretKeyRef:
+                  name: my-secret
+                  key: db_password               
+           
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-java
+spec:
+  selector:
+    app: backend-java
+  ports:
+    - port: 8080
+  type: ClusterIP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-js
+spec:
+  replicas: 3 
+  selector:
+    matchLabels:
+      app: frontend-js
+  template:
+    metadata:
+      labels:
+        app: frontend-js
+      annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/patch: /metrics
+          prometheus.io/port: "80"
+    spec:
+      containers:
+      - name: frontend-js
+        image: rcventura/currency-converter-frontend:{{TAG}} 
+        resources:
+        limits:
+          cpu: "500m"
+          memory: "1Gi"
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-js
+spec:
+  selector:
+    app: frontend-js
+  ports:
+    - port: 80
+  type: LoadBalancer
+
+---

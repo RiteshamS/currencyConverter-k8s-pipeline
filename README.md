@@ -134,11 +134,11 @@ https://user-images.githubusercontent.com/87483916/224570140-59ec3d15-2057-4b94-
 
 
 
-## :book: Documentação
+## :book: Documentation
 
 ##### <a href="https://swagger.io/specification/)" target="_blank"> Swagger/OpenAPI </a>
 
-<img src="https://user-images.githubusercontent.com/87483916/230924283-b1cf026a-ca3d-4ad0-a721-d762791bc960.png" alt="documentacão Api swagger"/>
+<img src="https://user-images.githubusercontent.com/87483916/230924283-b1cf026a-ca3d-4ad0-a721-d762791bc960.png" alt="documentation Api swagger"/>
 
 
 <div align="center">
@@ -147,98 +147,98 @@ https://user-images.githubusercontent.com/87483916/230924780-c11f1a06-e2d6-4cf1-
 
 </div>
 
-## ⚙️ Executando os testes
-<Br>
+## ⚙️ Running the tests
+<br>
 
-* Overview dos testes feitos em Junit, Mockito, Rest Assured
-<Br>
+* Overview of tests carried out in Junit, Mockito, Rest Assured
+<br>
 
-<div  style="display: inline-block" >
+<div style="display: inline-block" >
 
-<img src="https://user-images.githubusercontent.com/87483916/230927490-7ff73c1c-cc32-4e4f-bf0c-e899d38d96d9.png" alt="Imagem modificada" width="800"/>
+<img src="https://user-images.githubusercontent.com/87483916/230927490-7ff73c1c-cc32-4e4f-bf0c-e899d38d96d9.png" alt="Modified image" width="800"/>
 
-<img src="https://user-images.githubusercontent.com/87483916/230928492-249e0adf-1f74-48d4-9b40-b95a67b7846b.png" alt="Imagem modificada" width="800"/>
-<Br>
-<Br>
+<img src="https://user-images.githubusercontent.com/87483916/230928492-249e0adf-1f74-48d4-9b40-b95a67b7846b.png" alt="Modified image" width="800"/>
+<br>
+<br>
 
-### :fast_forward: Testes de Integração
+### :fast_forward: Integration Tests
 <Hr>
 
 #### :o: shouldConvertCurrencyAndSaveTransaction
-* Simula uma consulta na API externa.
-* Retorna com a taxa de conversão.
-* Processa a conversão.
-* Salva no banco de dados a transação.
-<Br>
-<img src= "https://user-images.githubusercontent.com/87483916/230958891-d9ff3b4b-1f7f-43ef-96a4-fb72c2a47303.png" alt= "Imagem modificada" width="800"/>
+* Simulates a query on the external API.
+* Returns the conversion rate.
+* Processes the conversion.
+* Saves the transaction in the database.
+<br>
+<img src= "https://user-images.githubusercontent.com/87483916/230958891-d9ff3b4b-1f7f-43ef-96a4-fb72c2a47303.png" alt= "Modified image" width="800"/>
 
 
 #### :o: Transaction Controller Feature
-* Simula todos os endpoints da aplicação ao manipular uma transação
+* Simulates all application endpoints when handling a transaction
 * Controller->Service->Repository
 * GET, UPDATE, GET/ID, DELETE/ID, SAVE
-<Br>
+<br>
 
 
-<img src="https://user-images.githubusercontent.com/87483916/230958940-8f6d3e33-36f8-4244-a334-59429143a0a1.png" alt=" Imagem modificada" width="800"/>
+<img src="https://user-images.githubusercontent.com/87483916/230958940-8f6d3e33-36f8-4244-a334-59429143a0a1.png" alt=" Modified image" width="800"/>
 
-<Br>
+<br>
 
-### :fast_forward: Testes Unitários
+### :fast_forward: Unit Tests
 <Hr>
 
 #### :o: CurrencyExceptionHandler
-* Simula o controle de exceções
-<Br>
+* Simulates exception control
+<br>
 
-![Sem título - Brave 10_04_2023 11_56_51](https://user-images.githubusercontent.com/87483916/230982651-7dbe2ae6-b3f4-4808-8c83-38cb4f8733d3.png)
+![Untitled - Brave 10_04_2023 11_56_51](https://user-images.githubusercontent.com/87483916/230982651-7dbe2ae6-b3f4-4808-8c83-38cb4f8733d3.png)
 
 
 #### :o: Currency Conversion
-* Simula uma conversão.
-* Chama a API Externa
-* Faz uma conversão do par USD para BRL.
-<Br>
+* Simulates a conversion.
+* Calls the External API
+* Converts the USD to BRL pair.
+<br>
 
-![Sem título - Brave 10_04_2023 11_54_53](https://user-images.githubusercontent.com/87483916/230982897-a2460374-df92-43b4-8a68-ae14140fe758.png)
+![Untitled - Brave 10_04_2023 11_54_53](https://user-images.githubusercontent.com/87483916/230982897-a2460374-df92-43b4-8a68-ae14140fe758.png)
 
 
-<Br>
+<br>
 
 #### :o: Transaction Service
-* Simula todas as manipulações de transações na camada de Serviços
+* Simulates all transaction manipulations in the Services layer
 * Service->Repository
 
-<Br>
+<br>
 
-![Sem título - Brave 10_04_2023 11_55_35](https://user-images.githubusercontent.com/87483916/230983762-5092a75c-d24e-4d28-8d41-6b3ee1b71449.png)
+![Untitled - Brave 10_04_2023 11_55_35](https://user-images.githubusercontent.com/87483916/230983762-5092a75c-d24e-4d28-8d41-6b3ee1b71449.png)
 
 
 </div>
 
 
-<!-- Explicar como executar os testes automatizados para este sistema.
+<!-- Explain how to run automated tests for this system.
 
-### 🔩 Analise os testes de ponta a ponta
+### 🔩 Analyze tests end-to-end
 
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-### ⌨️ E testes de estilo de codificação
-
-Explique que eles verificam esses testes e porquê.
+Explain that they check these tests and why.
 
 ```
-Dar exemplos
+Give examples
+```
+
+### ⌨️ And coding style tests
+
+Explain that they check these tests and why.
+
+```
+Give examples
 ```
 -->
 
-## 📦 Implantação
+## 📦 Implementation
 
-<Br>
+<br>
 
 <div align="center">
 
@@ -247,46 +247,45 @@ Dar exemplos
 
 </div>
 
-<Br>
+<br>
 
 #### :crystal_ball: DEVOPS
 
-* Utilizando o Terraform provisiona uma infra-estrutura básica na  Digital Ocean.
-* Criação de um cluster kubernetes com três serviços: backend, frontend e bancode dados
-* Criação de 3 réplicas do backend e do frontend para escalonamento
-* Criação de um load balancer aberto para internet que balanceia a carga para o frontend na porta 80 (http)
-* Provisionamento de um máquina virtual (Droplet) para configurar a orquestração com o Jenkins.
-* Criação do pipeline com o Jenkins CI utilizando o Docker e o DockerHub.
-* Configuração d eum webhook no github para automatização do início do pipeline CI após um gitpush no repositório.
+* Using Terraform provisions a basic infrastructure in Digital Ocean.
+* Creation of a kubernetes cluster with three services: backend, frontend and database
+* Creation of 3 replicas of the backend and frontend for scaling
+* Creation of an open load balancer for the internet that balances the load for the frontend on port 80 (http)
+* Provisioning a virtual machine (Droplet) to configure orchestration with Jenkins.
+* Creation of the pipeline with Jenkins CI using Docker and DockerHub.
+* Configuration of a webhook on github to automate the start of the CI pipeline after a gitpush on the repository.
 
 #### :mag: SRE
 
-* Criação de observabilidade utlizando o Helm para configurar o cluster Kubernetes.
-* Criação um load balancer aberto para requisições http na porta 80 e redirecionamento para a porta 9090 (prometheus)
-* Criação um load balancer aberto para requisições http na porta 80 e redirecionamento para 3000 (grafana).
-* Criação dos dashboards das métricas funcionais e não funcionais da aplicação.
+* Creation of observability using Helm to configure the Kubernetes cluster.
+* Creation of an open load balancer for http requests on port 80 and redirection to port 9090 (prometheus)
+* Creation of an open load balancer for http requests on port 80 and redirection to 3000 (grafana).
+* Creation of dashboards for the application's functional and non-functional metrics.
 
 #### :computer: DEV
 
-* Promove alterações no código e ativa o trigger do pipeline.
-* Manutenção e implementação dos testes unitários
-* Promove a cobertura do código nos testes.
+* Promotes changes to the code and activates the pipeline trigger.
+* Maintenance and implementation of unit tests
+* Promotes code coverage in tests.
 
-<Br>
+<br>
 
 
 
-## 🛠️ Tecnologias
+## 🛠️ Technologies
 
-<div  style="display: inline-block" >
+<div style="display: inline-block" >
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="80"  />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="80"  />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="80" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="80" />
 <img src= "https://user-images.githubusercontent.com/87483916/224313415-17511f48-87e4-4d9d-98ed-01daba701270.png" width="80"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"width="80" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg"width="80" />
 <img src="https://cdn.js
-
 
 
 
